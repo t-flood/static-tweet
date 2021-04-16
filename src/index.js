@@ -42,6 +42,13 @@ function Author({ author }) {
   );
 }
 
+Author.propTypes = {
+  author: PropTypes.shape({
+    name: PropTypes.string.isRequired,
+    handle: PropTypes.string.isRequired,
+  }).isRequired,
+};
+
 const Time = ({ time }) => {
   const timeString = moment(time).fromNow();
   return <span className="time">{timeString}</span>;
